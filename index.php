@@ -13,9 +13,9 @@
 
      <?php
 
-     //bloco de consulta para verificar quais os processos de AÇÃO DE DIVÓRCIO
+     //bloco de consulta para verificar quais os processos da 4Âª vara
 //#########################################################################################################
-            echo utf8_encode('todos os processos da 4ª Vara<br><br>');
+            echo utf8_encode('todos os processos da 4Âª Vara<br><br>');
             $query = "SELECT * from publicacoes_fila_2020_08_02";
              $result = mysqli_query($mysqli, $query);
 
@@ -31,19 +31,19 @@
        // echo "<p>". $row_conteudo['id'] . "--->" . $tipoproc ."</p>";
 
        $string = $tipoproc;
-       $search = ' 4ª Vara';
+       $search = ' 4Âª Vara';
                if (preg_match("/{$search}/", $string)) {
                   $idconteudo = $row_conteudo['id'];
 	              $haystack = $string;
-                  $needle   = 'RELAÇÃO Nº';
+                  $needle   = 'RELAÃ‡ÃƒO NÂº';
                   $pos      = strripos($haystack, $needle);
                   $needlej = 'JUIZ(A) DE DIREITO';
                   $posj      = strripos($haystack, $needlej);
 
 if ($pos === false) {
-    echo  utf8_encode("ID do Processo: ".$idconteudo." Não consta no Nº de processo<BR>");
+    echo  utf8_encode("ID do Processo: ".$idconteudo." NÃ£o consta no NÂº de processo<BR>");
 } else {
-     echo utf8_encode("ID do Processo: ".$idconteudo . " Nº do Processo: " . substr($haystack, ($pos + 77),25))."<BR>";
+     echo utf8_encode("ID do Processo: ".$idconteudo . " NÂº do Processo: " . substr($haystack, ($pos + 77),25))."<BR>";
      echo utf8_encode(substr($haystack, ($posj),46))."<BR><br>";
 
 }
@@ -59,9 +59,9 @@ if ($pos === false) {
                     print_r($json_array);  // imprimindo o dados json
                     echo '</pre>';
                     */
-     //bloco de consulta para verificar quais são os processos referente a processos de alimentação
+     //bloco de consulta para verificar quais sÃ£o os processos referente a processos de alimentaÃ§Ã£o
 //#####################################################################################################
-    echo utf8_encode('<br><br>todos os processos de alimentação<br><br>');
+    echo utf8_encode('<br><br>todos os processos de alimentaÃ§Ã£o<br><br>');
     $query = "SELECT * from publicacoes_fila_2020_08_02";
     $result = mysqli_query($mysqli, $query);
 
@@ -75,15 +75,15 @@ if ($pos === false) {
                if (preg_match("/{$search}/", $string)) {
                   $idconteudo = $row_conteudo['id'];
 	              $haystack = $string;
-                  $needle   = 'RELAÇÃO Nº';
+                  $needle   = 'RELAÃ‡ÃƒO NÂº';
                   $pos      = strripos($haystack, $needle);
                   $needlej = 'JUIZ(A) DE DIREITO';
                   $posj      = strripos($haystack, $needlej);
 
 if ($pos === false) {
-    echo  utf8_encode("ID do Processo: ".$idconteudo." Não consta no Nº de processo<BR>");
+    echo  utf8_encode("ID do Processo: ".$idconteudo." NÃ£o consta no NÂº de processo<BR>");
 } else {
-     echo utf8_encode("ID do Processo: ".$idconteudo . " Nº do Processo: " . substr($haystack, ($pos + 77),25))."<BR>";
+     echo utf8_encode("ID do Processo: ".$idconteudo . " NÂº do Processo: " . substr($haystack, ($pos + 77),25))."<BR>";
      echo utf8_encode(substr($haystack, ($posj),46))."<BR><br>";
 
 }
@@ -94,7 +94,7 @@ if ($pos === false) {
            }
       //bloco de consulta para verificar quais os processos de paterinidade
 //#########################################################################################################
-       echo utf8_encode('<br><br>todos os processos de investigação de paternidade<br><br>');
+       echo utf8_encode('<br><br>todos os processos de investigaÃ§Ã£o de paternidade<br><br>');
             $query = "SELECT * from publicacoes_fila_2020_08_02";
              $result = mysqli_query($mysqli, $query);
             while($row_conteudo = mysqli_fetch_assoc($result)){
@@ -103,28 +103,28 @@ if ($pos === false) {
        // echo "<p>". $row_conteudo['id'] . "--->" . $tipoproc ."</p>";
 
        $string = $tipoproc;
-       $search = 'investigação de paternidade';
+       $search = 'investigaÃ§Ã£o de paternidade';
                if (preg_match("/{$search}/", $string)) {
 $idconteudo = $row_conteudo['id'];
 	              $haystack = $string;
-                  $needle   = 'RELAÇÃO Nº';
+                  $needle   = 'RELAÃ‡ÃƒO NÂº';
                   $pos      = strripos($haystack, $needle);
                   $needlej = 'JUIZ(A) DE DIREITO';
                   $posj      = strripos($haystack, $needlej);
 
 if ($pos === false) {
-    echo  utf8_encode("ID do Processo: ".$idconteudo." Não consta no Nº de processo<BR>");
+    echo  utf8_encode("ID do Processo: ".$idconteudo." NÃ£o consta no NÂº de processo<BR>");
 } else {
-     echo utf8_encode("ID do Processo: ".$idconteudo . " Nº do Processo: " . substr($haystack, ($pos + 77),25))."<BR>";
+     echo utf8_encode("ID do Processo: ".$idconteudo . " NÂº do Processo: " . substr($haystack, ($pos + 77),25))."<BR>";
      echo utf8_encode(substr($haystack, ($posj),46))."<BR><br>";
 
 }
 
                   }
         }
-      //bloco de consulta para verificar quais os processos de AÇÃO DE DIVÓRCIO
+      //bloco de consulta para verificar quais os processos de AÃ‡ÃƒO DE DIVÃ“RCIO
 //#########################################################################################################
-            echo utf8_encode('<br><br>todos os processos de AÇÃO DE DIVÓRCIO<br><br>');
+            echo utf8_encode('<br><br>todos os processos de AÃ‡ÃƒO DE DIVÃ“RCIO<br><br>');
             $query = "SELECT * from publicacoes_fila_2020_08_02";
              $result = mysqli_query($mysqli, $query);
             while($row_conteudo = mysqli_fetch_assoc($result)){
@@ -134,28 +134,28 @@ if ($pos === false) {
 
 
        $string = $tipoproc;
-       $search = 'AÇÃO DE DIVÓRCIO';
+       $search = 'AÃ‡ÃƒO DE DIVÃ“RCIO';
                if (preg_match("/{$search}/", $string)) {
 $idconteudo = $row_conteudo['id'];
 	              $haystack = $string;
-                  $needle   = 'RELAÇÃO Nº';
+                  $needle   = 'RELAÃ‡ÃƒO NÂº';
                   $pos      = strripos($haystack, $needle);
                   $needlej = 'JUIZ(A) DE DIREITO';
                   $posj      = strripos($haystack, $needlej);
 
 if ($pos === false) {
-    echo  utf8_encode("ID do Processo: ".$idconteudo." Não consta no Nº de processo<BR>");
+    echo  utf8_encode("ID do Processo: ".$idconteudo." NÃ£o consta no NÂº de processo<BR>");
 } else {
-     echo utf8_encode("ID do Processo: ".$idconteudo . " Nº do Processo: " . substr($haystack, ($pos + 77),25))."<BR>";
+     echo utf8_encode("ID do Processo: ".$idconteudo . " NÂº do Processo: " . substr($haystack, ($pos + 77),25))."<BR>";
      echo utf8_encode(substr($haystack, ($posj),46))."<BR><br>";
 
 }
 
                   }
            }
-            //bloco de consulta para verificar quais os processos de AÇÃO DE DIVÓRCIO
+            //bloco de consulta para verificar quais os processos de AÃ‡ÃƒO DE DIVÃ“RCIO
 //#########################################################################################################
-            echo utf8_encode('<br><br>todos os processos de Inventário<br><br>');
+            echo utf8_encode('<br><br>todos os processos de InventÃ¡rio<br><br>');
             $query = "SELECT * from publicacoes_fila_2020_08_02";
              $result = mysqli_query($mysqli, $query);
             while($row_conteudo = mysqli_fetch_assoc($result)){
@@ -165,19 +165,19 @@ if ($pos === false) {
 
 
        $string = $tipoproc;
-       $search = 'Inventário';
+       $search = 'InventÃ¡rio';
                if (preg_match("/{$search}/", $string)) {
 $idconteudo = $row_conteudo['id'];
 	              $haystack = $string;
-                  $needle   = 'RELAÇÃO Nº';
+                  $needle   = 'RELAÃ‡ÃƒO NÂº';
                   $pos      = strripos($haystack, $needle);
                   $needlej = 'JUIZ(A) DE DIREITO';
                   $posj      = strripos($haystack, $needlej);
 
 if ($pos === false) {
-    echo  utf8_encode("ID do Processo: ".$idconteudo." Não consta no Nº de processo<BR>");
+    echo  utf8_encode("ID do Processo: ".$idconteudo." NÃ£o consta no NÂº de processo<BR>");
 } else {
-     echo utf8_encode("ID do Processo: ".$idconteudo . " Nº do Processo: " . substr($haystack, ($pos + 77),25))."<BR>";
+     echo utf8_encode("ID do Processo: ".$idconteudo . " NÂº do Processo: " . substr($haystack, ($pos + 77),25))."<BR>";
      echo utf8_encode(substr($haystack, ($posj),46))."<BR><br>";
 
 }
@@ -195,11 +195,11 @@ if ($pos === false) {
 
 
        $string = $tipoproc;
-       $search = 'Inventário';
-       $searcha = 'AÇÃO DE DIVÓRCIO';
-       $searchb = 'investigação de paternidade';
+       $search = 'InventÃ¡rio';
+       $searcha = 'AÃ‡ÃƒO DE DIVÃ“RCIO';
+       $searchb = 'investigaÃ§Ã£o de paternidade';
        $searchc = 'ALIMENTOS';
-       $searchd = ' 4ª Vara';
+       $searchd = ' 4Âª Vara';
                if ((preg_match("/{$searchd}/", $string)) || (preg_match("/{$search}/", $string)) || (preg_match("/{$searcha}/", $string)) || (preg_match("/{$searchb}/", $string)) || (preg_match("/{$searchc}/", $string)) ) {
 	              //echo 'true';
 
@@ -208,14 +208,14 @@ if ($pos === false) {
 
                   $idconteudo = $row_conteudo['id'];
 	              $haystack = $string;
-                  $needle   = 'RELAÇÃO Nº';
+                  $needle   = 'RELAÃ‡ÃƒO NÂº';
                   $pos      = strripos($haystack, $needle);
                   $needlej = 'JUIZ(A) DE DIREITO';
                   $posj      = strripos($haystack, $needlej);
 if ($pos === false) {
-    echo  utf8_encode("ID do Processo: ".$idconteudo." Não consta no Nº de processo<BR>");
+    echo  utf8_encode("ID do Processo: ".$idconteudo." NÃ£o consta no NÂº de processo<BR>");
 } else {
-    echo utf8_encode("ID do Processo: ".$idconteudo . " Nº do Processo: " . substr($haystack, ($pos + 77),25))."<BR>";
+    echo utf8_encode("ID do Processo: ".$idconteudo . " NÂº do Processo: " . substr($haystack, ($pos + 77),25))."<BR>";
      echo utf8_encode(substr($haystack, ($posj),46))."<BR><br>";
 }
 
